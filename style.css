@@ -52,6 +52,9 @@ a:visited {
   font-size: 1.5rem;
   cursor: default;
 }
+.dashboard ul span {
+cursor: pointer;
+}
 .dashboard ul {
   display: grid;
   font-weight: bold;
@@ -61,10 +64,10 @@ a:visited {
   display: grid;
   grid-template-columns: 40px 1fr;
   align-items: end;
-  transition: all 0.15s ease-out;
+  transition: all 0.18s ease-in-out;
 }
 .dashboard ul li:hover {
-  scale: 1.1;
+  scale: 1.12;
   text-shadow: 0px 0px 6px rgba(255, 255, 255, 0.7);
 }
 
@@ -95,6 +98,8 @@ a:visited {
 .input-container span {
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.2s ease-out;
+
 }
 .input-container input {
   border: none;
@@ -106,6 +111,14 @@ a:visited {
   background-color: #6155a030;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   font-family: inherit;
+  transition: all 0.2s ease-out;
+}
+.input-container span:hover {
+  scale: 1.1;
+}
+.input-container input:focus {
+  margin: 0 10px;
+  scale: 1.07;
 }
 .header-1st-row div:nth-child(2) {
   display: grid;
@@ -207,6 +220,10 @@ p.profile-name {
   grid-template-rows: 35px 1fr;
   height: max-content;
 }
+.main-content-1st-column h4:hover{
+text-decoration: underline;
+cursor: pointer;
+}
 .projects-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -245,6 +262,9 @@ p.profile-name {
 }
 .main-content-2nd-column h4 {
   color: #333;
+}
+.main-content-2nd-column a:hover {
+  text-decoration: underline;
 }
 .announcements,
 .trending {
@@ -290,6 +310,7 @@ p.profile-name {
 @media only screen and (max-width: 1024px) {
   .main-content {
     grid-template-columns: 1fr;
+    padding: 3% 0;
   }
   .main-content-1st-column {
     width: 80%;
@@ -299,13 +320,41 @@ p.profile-name {
     justify-self: start;
     grid-template-columns: 1fr 1fr;
     width: 100%;
+    padding: 3% 5%;
+  }
+  .header-2nd-row button {
+    width:max-content;
   }
 }
 @media only screen and (max-width: 768px) {
-
+.header-2nd-row {
+  padding-left: 0;
+  padding-right: 0;
+}
   .main-content-2nd-column {
     width: max-content;
     grid-template-columns: 1fr;
     margin: 0 auto;
+  }
+  .header-1st-row {
+    grid-template-columns: 100px 180px;
+    justify-content: end;
+  }
+  .header-1st-row input {
+    display: none;
+  }
+  .header-1st-row span {
+    justify-self: end;
+  }
+}
+@media only screen and (max-width: 648px) {
+  .main-container {
+    grid-template-columns: 1fr 9fr;
+  }
+  .dashboard {
+    width: max-content;
+  }
+  .dashboard li a, .dashboard h3 {
+    display: none;
   }
 }
